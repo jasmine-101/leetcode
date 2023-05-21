@@ -28,12 +28,12 @@ class Solution {
                 TreeNode left=cur.left;
                 TreeNode right=cur.right;
 
-                if(isValid(left)){
-                    q.offer(left);
+                if(cur.left!=null){
+                    q.offer(cur.left);
                 }
 
-                if(isValid(right)){
-                    q.offer(right);
+                if(cur.right!=null){
+                    q.offer(cur.right);
                 }
             }
             answer.add(sum/size);
@@ -41,7 +41,4 @@ class Solution {
         return answer;
     }
 
-    private boolean isValid(TreeNode node){
-        return !Objects.isNull(node);
-    }
 }
