@@ -1,6 +1,11 @@
 class Solution {
     public int majorityElement(int[] nums) {
         int n = nums.length;
+
+        if(n==1){
+            return nums[0];
+        }
+        
         int half = (n - 1) / 2;
         Map<Integer, Integer> map = new HashMap<>();
 
