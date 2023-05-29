@@ -1,0 +1,17 @@
+class Solution {
+    public int majorityElement(int[] nums) {
+        int n = nums.length;
+        int half = (n - 1) / 2;
+        Map<Integer, Integer> map = new HashMap<>();
+
+        for (int i = 0; i < n; i++) {
+            int key = nums[i];
+            int value = map.getOrDefault(key, 0);
+            if (value == half) {
+                return key;
+            }
+            map.merge(key, 1, Integer::sum);
+        }
+        return -1;
+    }
+}
