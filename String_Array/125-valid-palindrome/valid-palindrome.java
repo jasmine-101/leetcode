@@ -25,12 +25,9 @@ class Solution {
 
     }
     private char getValidCharacter(char c){
-        if(c >= 'a' && c<='z' || c>='0' && c<='9'){
-            return c;
-        }else if (c>='A' && c<='Z'){
+        if(Character.isLetterOrDigit(c)){
             return Character.toLowerCase(c);
-        }else{
-            return '*';
         }
+        return '*';
     }
 }
